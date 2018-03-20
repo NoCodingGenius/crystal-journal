@@ -1,0 +1,27 @@
+<%- include ../partials/header.ejs %>
+  <br>
+  <br>
+  <br>
+  <div class="flex-container">
+    <div class="public-post">
+      <img class="public-profile-image" src="http://via.placeholder.com/150x150">
+      <p name: "name"><b>Name:</b>
+        <%= user.full_name %>
+      </p>
+      <p name: "dateJoined"><b>Date Joined:</b>
+        <%= user.join_date %>
+      </p>
+      <p name: "currentCity"><b>Favorite Crystal:</b>
+        <%= favorite.crystal %>
+      </p>
+    </div>
+    <section class="public-post">
+      <h1><a href="/crystals/<%= crystal.id%>"><%= crystal.name %></a></h1>
+      <h2><%= journal.title %></h2>
+      <p>
+        <%= journal.body %>
+      </p>
+    </section>
+  </div>
+
+  <%- include ../partials/footer.ejs %>
