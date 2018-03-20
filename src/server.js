@@ -27,7 +27,7 @@ app.use(session({
   }
 }));
 
-app.use("/", routes);
+app.use(routes);
 
 app.listen(port, () => {
   console.log(`http://localhost:${port}`);
