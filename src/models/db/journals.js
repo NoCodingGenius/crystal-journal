@@ -51,7 +51,6 @@ const create = journal => {
     console.error({
       message: 'Error occurred while executing journals.create',
       arguments: arguments});
-    throw error;
   });
 };
 
@@ -69,9 +68,8 @@ const updateCrystalsJournalsPost = (crystal, journal) => {
     console.error({
       message: 'Error occurred while executing journals.updateCrystalsJournal',
       arguments: arguments});
-    throw error;
-  })
-}
+  });
+};
 
 const updateJournalById = (title, body, id) => db.oneOrNone(`
     UPDATE
@@ -97,8 +95,7 @@ const destroy = id => {
     console.error({
       message: 'Error occurred while executing journals.destroy',
       arguments: arguments});
-    throw error;
-  })
+  });
 };
 
 const destroyCrystalsJournals = id => {
@@ -113,8 +110,7 @@ const destroyCrystalsJournals = id => {
     console.error({
       message: 'Error occurred while executing journals.destroyCrystalsJournals',
       arguments: arguments});
-    throw error;
-  })
+  });
 };
 
 module.exports = {
