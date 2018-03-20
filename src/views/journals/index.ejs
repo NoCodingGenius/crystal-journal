@@ -1,0 +1,52 @@
+<%- include ../partials/header.ejs %>
+  <div class="splash-container">
+    <img class="pure-img" src="https://images.pexels.com/photos/248159/pexels-photo-248159.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb" alt="roam-image">
+    <div class="splash">
+      <h1 class="splash-head">Crystal Journal</h1>
+      <p class="splash-subhead">
+        Crystals are a Spirit Child's Best Friend!
+      </p>
+      <p class="splash-subhead"><i>Spread the light...</i></p>
+    </div>
+  </div>
+  <div class="content-wrapper">
+    <div class="content">
+      <h2 class="content-head is-center">Crystal babies to explore...</h2>
+
+      <div class="pure-g">
+        <% crystals.forEach(function(crystal) {%>
+          <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+
+            <h3 class="content-subhead">
+                        <i class="fa fa-map-marker"></i>
+                        <a href="/crystals/<%= crystal.id %>"><%= crystal.name %></a>
+                    </h3>
+            <p>
+              <%= crystal.description %>
+            </p>
+          </div>
+          <% }) %>
+      </div>
+    </div>
+
+    <div class="ribbon l-box-lrg pure-g">
+      <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+        <img width="300" alt="Crystal Journal Icon" class="pure-img-responsive" src="/">
+      </div>
+      <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+
+        <h2 class="content-head content-head-ribbon">Join the cove and write a journal entry!</h2>
+
+        <p>
+          “The Mineral Kingdom is a Libraary of healing light.” ― Ethan Lazzerini, Crystal Healing For The Chakras
+        </p>
+        <p>
+          “Sorry, I cant... I have to charge my crystals.” – Everyone that loves crystals
+        </p>
+        <p>
+          “If you want to find the secrets of the universe, think in terms of energy, frequency, and vibration.” – Nikola Tesla, HibiscusMoonCrystalAcademy.com
+        </p>
+      </div>
+    </div>
+
+  <%- include ../partials/footer.ejs %>
