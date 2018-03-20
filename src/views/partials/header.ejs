@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Crystal Journal</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <link rel="stylesheet" href="/marketing.css">
+  <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+      <a class="pure-menu-heading" href="/">Crystal Journal</a>
+      <span><%= crystal.name %></span>
+      <ul class="pure-menu-list">
+        <% if (!isLoggedIn) {%>
+          <li class="pure-menu-item pure-menu-selected"><a href="/" class="pure-menu-link">Home</a></li>
+          <li class="pure-menu-item"><a class="pure-menu-link sign-up" href="/signup">Sign Up</a></li>
+          <li class="pure-menu-item"><a class="pure-menu-link sign-in" href="/signin">Sign In</a></li>
+          <%} else { %>
+            <li class="pure-menu-item pure-menu-selected"><a href="/" class="pure-menu-link">Home</a></li>
+            <li class="pure-menu-item"><a class="pure-menu-link private-profile" href="/profile/private">Profile</a></li>
+            <li class="pure-menu-item"><a class="pure-menu-link sign-out" href="/signout">Sign Out</a></li>
+            <% } %>
+      </ul>
+
+    </div>
+  </div>
