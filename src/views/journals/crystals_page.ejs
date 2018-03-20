@@ -1,0 +1,48 @@
+<%- include ../partials/header.ejs %>
+  <div class="splash-container">
+    <img class="pure-img" src="<%= crystal.image %>" alt="crystal-image">
+    <div class="splash">
+      <h1 class="splash-head"><%= crystal.name %></h1>
+      <p class="splash-subhead">
+        Crystals are a Spirit Child's Best Friend!
+      </p>
+      <p class="splash-subhead"><i>Spread light...</i></p>
+      <p>
+        <% if (isLoggedIn) {%>
+          <form action="/newpost/<%= crystal.id %>">
+            <button class="pure-button pure-button-primary" type="Submit" name="new_post_button">New Post</button>
+          </form>
+          <%}%>
+      </p>
+    </div>
+  </div>
+  <div class="content-wrapper">
+    <div class="content">
+      <h2 class="content-head is-center">Journal Entries to Read...</h2>
+
+      <div class="pure-g">
+        <% journals.forEach(function(journal) { %>
+          <% if (!isLoggedIn || user === journal.user_id) {%>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+
+              <h3 class="content-subhead">
+                      <i class="fa fa-heart"></i>
+                      <a href="/show/<%= journal.id %>"><%= journal.title %></a>
+                      <% if (isLoggedIn) {%>
+                      <div class="flex-container-city">
+                      <form action="/joural/update/<%= journal.id %>">
+                        <button class="pure-button pure-button-primary" type="Submit" name="edit-button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                      </form>
+                      <form action="/journal/delete/<%= journal.id %>?_method=DELETE" method="POST">
+                        <button class="pure-button pure-button-primary" type="Submit" name="delete-button">          <i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                      </form>
+                    </div>
+                      <%}%>
+                  </h3>
+            </div>
+            <%}%>
+              <% }) %>
+      </div>
+    </div>
+
+  <%- include ../partials/footer.ejs %>
