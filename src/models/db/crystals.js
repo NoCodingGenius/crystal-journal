@@ -5,7 +5,7 @@ const findByCrystal = () => {
   return db.query(sql, [])
   .catch(error => {
     console.error({
-      message: "Error occurred while executing posts.findByCrystal",
+      message: "Error occurred while executing journals.findByCrystal",
       arguments: arguments});
   });
 };
@@ -15,7 +15,7 @@ const findById = id => {
   return db.oneOrNone(sql, [id])
   .catch(error => {
     console.error({
-      message: "Error occurred while executing posts.findById",
+      message: "Error occurred while executing journals.findById",
       arguments: arguments});
   });
 };
@@ -25,7 +25,7 @@ const findByJournalId = id => {
   return db.oneOrNone(sql, [id])
   .catch(error => {
     console.error({
-      message: "Error occurred while executing posts.findByJournalId",
+      message: "Error occurred while executing journals.findByJournalId",
       arguments: arguments});
   });
 };
@@ -35,7 +35,7 @@ const findByIdForCrystalsJournals = id => {
   return db.oneOrNone(sql, [id])
   .catch(error => {
     console.error({
-      message: "Error occurred while executing posts.findByIdForCrystalsJournals",
+      message: "Error occurred while executing journals.findByIdForCrystalsJournals",
       arguments: arguments});
   });
 };
