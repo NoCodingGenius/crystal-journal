@@ -1,0 +1,38 @@
+<%- include ../partials/header.ejs %>
+  <br>
+  <br>
+  <br>
+  <div class="flex-container">
+    <h1>Signup!</h1>
+  </div>
+  <div class="flex-container">
+    <form class="pure-form pure-form-stacked" action="/signup" method="POST">
+      <fieldset>
+        <div class="pure-control-group">
+          <label for="name">Full Name:</label>
+          <input id="name" type="text" placeholder="First and Last Name" name="full_name" required/>
+        </div>
+
+        <div class="pure-control-group">
+          <label for="fave-crystal">Favorite Crystal:</label>
+          <input id="fave-crystal" type="text" name="favorite_crystal" required/>
+        </div>
+
+        <div class="pure-control-group">
+          <label for="email">Email: </label>
+          <input id="email" type="email" name="email" required/>
+        </div>
+
+        <div class="pure-control-group">
+          <label for="password">Password: </label>
+          <input id="password" type="password" name="password" required/>
+        </div>
+
+        <div class="pure-controls">
+          <button type="submit" class="pure-button pure-button-primary">Signup</button>
+          <span>Already a user? <a href="/login">Login!</a></span>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  <%- include ../partials/footer.ejs %>
