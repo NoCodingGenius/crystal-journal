@@ -1,0 +1,32 @@
+<%- include ../partials/header.ejs %>
+  <br>
+  <br>
+  <br>
+  <div class="flex-container">
+    <div class="profile-section">
+      <img class="profile-image" src="http://via.placeholder.com/150x150">
+      <p name: "name"><b>Name:</b>
+        <%= user.full_name %>
+      </p>
+      <p name: "dateJoined"><b>Date Joined:</b>
+        <%= user.join_date %>
+      </p>
+      <p name: "currentCity"><b>Favorite Crystal:</b>
+        <%= user.favorite_crystal %>
+      </p>
+    </div>
+
+    <section class="journal-section">
+      <h1>Journals</h1>
+      <% journals.forEach(function(journal) {%>
+        <span>
+          <b><%= crystal.name %>: </b>
+        <ul>
+          <li>
+            <a href="/show/<%= journal.id %>"><%= journal.title %></a></li>
+        </ul>
+      </span>
+        <% }) %>
+    </section>
+  </div>
+  <%- include ../partials/footer.ejs %>
