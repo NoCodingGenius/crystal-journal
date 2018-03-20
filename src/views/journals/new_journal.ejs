@@ -1,0 +1,29 @@
+<%- include ../partials/header.ejs %>
+  <br>
+  <br>
+  <br>
+  <div class="flex-container">
+    <h1>New Journal</h1>
+  </div>
+  <div class="flex-container">
+    <form class="pure-form pure-form-stacked" action="/newjournal/<%= crystal.id %>" method="POST">
+      <fieldset>
+        <input type='hidden' name='user_id' value='<%= user %>'>
+        <input type='hidden' name='crystal_id' value='<%= crystal.id %>'>
+        <div class="pure-control-group">
+          <label for="title">Title:</label>
+          <textarea name="title" rows="1" cols="80"></textarea>
+        </div>
+
+        <div class="pure-control-group">
+          <label for="body">Body:</label>
+          <textarea name="body" rows="8" cols="80"></textarea>
+        </div>
+
+        <div class="pure-controls">
+          <button type="submit" class="pure-button pure-button-primary">Submit Journal</button>
+        </div>
+      </fieldset>
+    </form>
+
+    <%- include ../partials/footer.ejs %>
