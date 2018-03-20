@@ -9,7 +9,7 @@ CREATE TABLE users (
   email VARCHAR(255) UNIQUE NOT NULL,
   encrypted_password VARCHAR(255) NOT NULL,
   join_date DATE DEFAULT current_date,
-  favorite_crystal VARCHAR(255) DEFAULT 'Enter favorite crystal here'
+  favorite_crystal VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE crystals (
