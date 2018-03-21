@@ -4,7 +4,12 @@
   "description": "Crystal Journal for crystal lovers",
   "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "db:create": "createdb crystal_journal",
+    "db:reset": "dropdb crystal_journal && createdb crystal_journal && npm run load_schema",
+    "load_schema": "psql -d crystal_journal < src/models/db/schema/schema.sql",
+    "load_data": "psql -d  crystal_journal < src/models/db/schema/seed_data.sql"
   },
   "repository": {
     "type": "git",
