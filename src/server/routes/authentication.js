@@ -2,6 +2,7 @@ import express from 'express';
 import moment from 'moment';
 import { signUp } from '../../models/db/signup';
 import { login } from '../../models/db/login';
+import middleware from '../middleware';
 
 const router = express.Router()
 router.use(middleware.setDefaultResponseLocals);
