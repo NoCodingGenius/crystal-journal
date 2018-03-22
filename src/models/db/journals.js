@@ -1,4 +1,4 @@
-const db = require('./db');
+import db from './db';
 
 const findByUserId = id => {
   const sql = `SELECT * FROM journals WHERE user_id =$1`
