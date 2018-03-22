@@ -1,6 +1,6 @@
 import express from 'express';
 import { signUp } from '../../models/db/signup';
-import { login } from '../../models/db/signin';
+import { login } from '../../models/db/login';
 
 const router = express.Router()
 
@@ -23,7 +23,7 @@ router.get('/login', (req, res) => {
 
 router.post('/login', (req, res, next) => {
   const { email, password } = req.body
-  signIn(email, password)
+  login(email, password)
   .then((user) => {
     return res.redirect('/')
   })
