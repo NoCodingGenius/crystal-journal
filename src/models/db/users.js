@@ -1,4 +1,4 @@
-const db = require('./db');
+import db from './db';
 
 const findByEmail = email => {
   const sql = `SELECT * FROM users WHERE email =$1`

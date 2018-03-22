@@ -1,4 +1,4 @@
-const db = require("./db");
+import db from './db';
 
 const findByCrystal = () => {
   const sql = `SELECT * FROM crystals`;
